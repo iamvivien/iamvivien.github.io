@@ -12,12 +12,13 @@
 				dependencies: ['raycaster'],
 				init: function () {
 					this.el.addEventListener('raycaster-intersection', function (e) {
-				  		console.log('Player hit something!' + e.target.id);
+				  		console.log('Player hit something! ' + e.target.id);
 					});
 				}
 			});
 		</script>
-
+	</head>
+	<body>
 		<a-scene collider-check>
 			<!-- ASSETS -->
 			<a-assets>
@@ -98,3 +99,5 @@
 		  		</a-animation>
 			</a-entity>
 		</a-scene>
+	</body>
+</html>
