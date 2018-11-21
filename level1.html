@@ -11,8 +11,8 @@
 			AFRAME.registerComponent('collider-check', {
 				dependencies: ['raycaster'],
 				init: function () {
-					this.el.addEventListener('raycaster-intersection', function () {
-				  		console.log('Player hit something!');
+					this.el.addEventListener('raycaster-intersection', function (e) {
+				  		console.log('Player hit something!' + e.target.id);
 					});
 				}
 			});
@@ -88,7 +88,7 @@
 			</a-entity>
 
 			<!-- WOMAN -->
-			<a-entity class="collidable" gltf-model="#woman" scale="0.011 0.011 0.011" geometry="primitive: box;" position="1 0.5 -18.960" rotation="0 0 0">
+			<a-entity id="1" class="collidable" gltf-model="#woman" scale="0.011 0.011 0.011" geometry="primitive: box;" position="1 0.5 -18.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="22000"
 			  		fill="forwards"
