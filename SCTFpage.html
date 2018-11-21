@@ -22,11 +22,11 @@
         window.onload = validate_session();
         function validate_session() {
           if (sessionStorage.getItem("username") == "player") {
-            location.replace("userpage.html");
+            location.replace("user.html");
           }
 
           else if (sessionStorage.getItem("username") != "sctf") {
-            location.replace("loginpage.html");
+            location.replace("login.html");
           }
         }
         
@@ -63,7 +63,7 @@
 
         function update_variables() {
           alert("Updated successfully!");
-          window.location = "loginpage.html";
+          window.location = "loginModified.html";
         }
 
         $(document).on('click', '.browse', function(){
