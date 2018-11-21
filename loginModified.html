@@ -18,17 +18,17 @@
         function validate() {
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
-            if (username == "player" && password == "player123"){
+            if (username == "player" && password == "playerpwd"){
                 sessionStorage.setItem("username", "player");
                 alert("Login successfully!");
                 window.location.href = "userModified.html";
-            } else if (username == "sctf" && password == "sctf123") {
+            } else if (username == "wearesctf" && password == "sctfpwd") {
                 sessionStorage.setItem("username", "sctf");
                 alert(sessionStorage.getItem("username"));
                 window.location.href = "SCTFpage.html";
             } else {
                 attempts--;
-                alert("You have "+ attempts +" attempt(s) left.");
+                alert("The username or password you have entered is invalid. Please try again. You have "+ attempts +" attempt(s) left.");
 
                 if (attempts == 0) {
                     document.getElementById("username").disabled = true;
@@ -43,7 +43,7 @@
             <div class="wrap-login100">
                 <form class="login100-form validate-form">
                     <span class="login100-form-title p-b-34">
-                        CycleMyLyfe's Account Login
+                        Account Login
                     </span>
                     
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
