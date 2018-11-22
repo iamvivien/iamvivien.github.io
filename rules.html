@@ -57,6 +57,12 @@
 					<!-- /Collapse nav button -->
 				</div>
 
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#" class="logout">Logout</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
 			</div>
 		</nav>
 		<!-- /Nav -->
@@ -65,11 +71,12 @@
 		<div class="home-wrapper">
 			<div class="container">
 				<div class="row">
-
 					<!-- home content -->
 					<div class="col-md-10 col-md-offset-1">
 						<div class="home-content">
 							<h1 class="white-text">CycleMyLyfe</h1>
+							<a class="ct-btn-scroll ct-js-btn-scroll" href="#section01"><img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
+							<p></p>
 							<p class="white-text" id="welcome"></p>
 							<div class="btn-group">
 								<span class="enabled" style="">
@@ -91,13 +98,12 @@
 							<div class="btn-group">
 								<button id="start_btn" class="main-btn" onclick="start_game()" style="display:none;">Start Game</button>
 							</div>
-
 						</div>
 					</div>
 					<!-- /home content -->
-
 				</div>
 			</div>
+				
 		</div>
 		<!-- /home wrapper -->
 
@@ -105,47 +111,49 @@
 	<!-- /Header -->
 
 	<!-- Objectives -->
-	<div id="features" class="section md-padding">
+	<section id="section01">
+		<div id="features" class="section md-padding">
 
-		<!-- Container -->
-		<div class="container">
+			<!-- Container -->
+			<div class="container">
 
-			<!-- Row -->
-			<div class="row">
+				<!-- Row -->
+				<div class="row">
 
-				<!-- Content-->
-				<div class="col-md-12">
-					<div id="rules" class="section-header">
-						<h2 class="title">Objectives</h2>
+					<!-- Content-->
+					<div class="col-md-12">
+						<div id="rules" class="section-header">
+							<h2 class="title">Objectives</h2>
+						</div>
+						<p>CYCLEMYLYFE is a VR-based application. This will be designed as close as possible to the streets and park connectors in the Real Environment (RE).</p>
+						<div class="feature">
+							<i class="fa fa-check"></i>
+							<p>To improve safety from cycling in Singapore</p>
+						</div>
+						<div class="feature">
+							<i class="fa fa-check"></i>
+							<p>Allow cyclists and Personal Mobility Devices (PMD) users to practice safe riding in Singapore</p>
+						</div>
+						<div class="feature">
+							<i class="fa fa-check"></i>
+							<p>To promote empathy between cyclists and non-cyclists</p>
+						</div>
+						<div class="feature">
+							<i class="fa fa-check"></i>
+							<p>To provide a feedback component for interaction between users and the developers of CYCLEMYLYFE.</p>
+						</div>
 					</div>
-					<p>CYCLEMYLYFE is a VR-based application. This will be designed as close as possible to the streets and park connectors in the Real Environment (RE).</p>
-					<div class="feature">
-						<i class="fa fa-check"></i>
-						<p>To improve safety from cycling in Singapore</p>
-					</div>
-					<div class="feature">
-						<i class="fa fa-check"></i>
-						<p>Allow cyclists and Personal Mobility Devices (PMD) users to practice safe riding in Singapore</p>
-					</div>
-					<div class="feature">
-						<i class="fa fa-check"></i>
-						<p>To promote empathy between cyclists and non-cyclists</p>
-					</div>
-					<div class="feature">
-						<i class="fa fa-check"></i>
-						<p>To provide a feedback component for interaction between users and the developers of CYCLEMYLYFE.</p>
-					</div>
+					<!-- /Content -->
+
 				</div>
-				<!-- /Content -->
+				<!-- /Row -->
 
 			</div>
-			<!-- /Row -->
+			<!-- /Container -->
 
 		</div>
-		<!-- /Container -->
-
-	</div>
-	<!-- /Objectives -->
+		<!-- /Objectives -->
+	</section>
 
 	<!-- Game Rules -->
 	<div id="features" class="section md-padding bg-grey">
@@ -290,6 +298,25 @@
 				window.location.href = "level3.html";
 			}
 		}
+
+		$(document).ready(function(){
+	        $("a").on('click', function(event) {
+	            if (this.hash !== "") {
+	                event.preventDefault();
+	                var hash = this.hash;
+	                $('html, body').animate({
+	                scrollTop: $(hash).offset().top
+	                }, 800, function(){
+	                    window.location.hash = hash;
+	                });
+	            } 
+	        });
+	    });  		
+
+		$('.logout').on("click",function(){
+			sessionStorage.clear();
+			window.location.href = "index.html";
+		});
 
 	</script>
 

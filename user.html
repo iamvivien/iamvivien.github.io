@@ -57,6 +57,12 @@
 					<!-- /Collapse nav button -->
 				</div>
 
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#" class="logout">Logout</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
 			</div>
 		</nav>
 		<!-- /Nav -->
@@ -189,6 +195,11 @@
 				window.location.href = "level3.html";
 			}
 		}
+
+		$('.logout').on("click",function(){
+			sessionStorage.clear();
+			window.location.href = "index.html";
+		});
 
 	</script>
 
