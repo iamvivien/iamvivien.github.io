@@ -56,4 +56,5 @@ of the environment, number of vehicles and pedestrians that were set by the SCTF
 
 ## FAQ
 Q: How will the users are able to access the application?
+
 A: You can access the application via iamvivien.github.io
