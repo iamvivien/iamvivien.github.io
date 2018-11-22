@@ -11,6 +11,11 @@
         <!-- ADD THESE SCRIPTS FOR TRAFFIC LIGHT'S ANIMATION -->
         <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
         <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>  
+        
+            <script src="https://npmcdn.com/aframe-animation-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-event-set-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+    <script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
     </head>
     
     <body>
@@ -26,12 +31,18 @@
 
             <!-- USER MODEL -->
             <a-entity position="0 1.8 -0.5">
-                <a-camera id="cam" user-height="1.8" wasd-controls="acceleration: 100" cursor="rayOrigin: mouse">
+                <a-entity camera look-controls id="cam" user-height="1.8" wasd-controls="acceleration: 100" >
+                    <!-- <a-camera id="cam" user-height="1.8" wasd-controls="acceleration: 100" cursor="rayOrigin: mouse" > -->
+                    <a-entity cursor="fuse: true; fuseTimeout: 500"
+                        position="0 0 -1" 
+                        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                        material="color: black; shader: flat">
+                    </a-entity>
                     <a-entity id="user_bicycle" gltf-model="#bicycle" scale="0.001 0.001 0.001" position="0 -0.780 -0.5" rotation="0 180 0"></a-entity>
                     <a-sphere raycaster="objects: .collidable; near: 0.2" position="0 -0.9 0" geometry="radius:0.5"></a-sphere>
                     <a-entity raycaster="objects: .collidable; near: 0.2" rotation="0 90 0"></a-entity>
                     <a-entity raycaster="objects: .collidable; near: 0.2" rotation="0 270 0"></a-entity>
-                </a-camera>
+                </a-entity>
             </a-entity>
 
             <!-- STREET ENVIRONMENT -->
@@ -60,10 +71,10 @@
 
             <a-box id="no" color="tomato" width="0.5" height="0.5" depth="0.001" position="24.45 1 -4.5" rotation="0 -85 0">
                 <a-text  color="black" align="center" width="3" font="aileronsemibold" value="No" ></a-text> 
-            </a-box>     
+            </a-box>    
         </a-scene>
     
-        <script>document.querySelector('#yes').addEventListener('click', function (evt) {
+        <script>document.querySelector('#yes').addEventListener('mouseenter', function (evt) {
             var messagebox1 = document.createElement('a-box');
             var successText = document.createElement('a-text');
             messagebox1.setAttribute('position', "24.4 2 -5");
@@ -85,7 +96,7 @@
             document.querySelector('#msg1').appendChild(successText);
         });
 
-        document.querySelector('#no').addEventListener('click', function (evt) {
+        document.querySelector('#no').addEventListener('mouseenter', function (evt) {
             var messagebox1 = document.createElement('a-box');
             var successText = document.createElement('a-text');
             messagebox1.setAttribute('position', "24.4 2 -5");
@@ -107,7 +118,7 @@
             document.querySelector('#msg1').appendChild(successText);
         });    
 
-        document.querySelector('#firstClose').addEventListener('click', function (evt) {
+        document.querySelector('#firstClose').addEventListener('mouseenter', function (evt) {
             var msgBox1 = document.querySelector('#firstMsg');
             msgBox1.parentNode.removeChild(msgBox1);
             var msgBox2 = document.querySelector('#firstClose');
