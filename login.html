@@ -13,6 +13,19 @@
 </head>
 <body>
 	<script>
+		window.onload = validate_session();
+
+        function validate_session() {
+        	if (sessionStorage.getItem("username") == "player") {
+            	window.location.href = "user.html";
+            }
+
+            else if (sessionStorage.getItem("username") == "sctf") {
+            	window.location.href = "sctf.html";
+            }
+
+        }
+
         var attempts = 3; 
 
         function validate() {

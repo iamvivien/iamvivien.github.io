@@ -31,7 +31,7 @@
 	<!-- Header -->
 	<header id="home">
 		<!-- Background Image -->
-		<div class="bg-img" style="background-image: url('images/background3.jpg');">
+		<div class="bg-img" style="background-image: url('images/background2.jpg');">
 			<div class="overlay"></div>
 		</div>
 		<!-- /Background Image -->
@@ -248,19 +248,22 @@
 	<!-- /Back to top -->
 
 	<script type="text/javascript">
-		window.onload = get_session_name();
+		window.onload = validate_session();
 
-		var level;
+        function validate_session() {
+          if (sessionStorage.getItem("username") == null) {
+            window.location.href = "login.html";
+          }
 
-		$('.dropdown-menu a').click(function(){
-    		level = $('#level').text($(this).text());
-    		$('#start_btn').show();
-  		});
-
-		function get_session_name() {
-			var username = sessionStorage.getItem("username");
+          else if (sessionStorage.getItem("username") == "player") {
+            var username = sessionStorage.getItem("username");
 			document.getElementById("welcome").innerHTML = "Welcome, " + username + "!";
-		}
+          }
+
+          else {
+          	window.location.href = "sctf.html";
+          }
+        }
 
 		function start_game() {
 			if (level.text() == "Level 1") {

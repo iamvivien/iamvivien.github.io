@@ -152,7 +152,22 @@
 	<!-- /Back to top -->
 
 	<script type="text/javascript">
-		window.onload = get_session_name();
+		window.onload = validate_session();
+
+        function validate_session() {
+          if (sessionStorage.getItem("username") == null) {
+            window.location.href = "login.html";
+          }
+
+          else if (sessionStorage.getItem("username") == "player") {
+            var username = sessionStorage.getItem("username");
+			document.getElementById("welcome").innerHTML = "Welcome, " + username + "!";
+          }
+
+          else {
+          	window.location.href = "sctf.html";
+          }
+        }
 
 		var level;
 
@@ -160,11 +175,6 @@
     		level = $('#level').text($(this).text());
     		$('#start_btn').show();
   		});
-
-		function get_session_name() {
-			var username = sessionStorage.getItem("username");
-			document.getElementById("welcome").innerHTML = "Welcome, " + username + "!";
-		}
 
 		function start_game() {
 			if (level.text() == "Level 1") {
