@@ -47,8 +47,8 @@ in the game itself. Also, should the he wants to have a more relistic game exper
 upload a 360 degree video into the application.
 
 
-After he has finalised the amendments, he will save the changes and the game will be amended based on the changes of
-the environment, number of vehicles and pedestrians that were set by the SCTF member.
+After he has finalised the amendments, he will save the changes and the game will be amended based on the changes
+of the environment, number of vehicles and pedestrians that were set by the SCTF member.
 
 ```
 ## VIDEO
