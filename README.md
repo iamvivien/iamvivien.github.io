@@ -19,7 +19,7 @@ Here, they are required to login with their credentials to access the applicatio
 
 
 ### For Players:
-```
+
 Upon successfully login into the player page, the player will have three options to choose for,
 which is the Rules & Regulations, Tutorial and Select Level.
 
@@ -36,23 +36,21 @@ The player can choose a game level based on his preference via a drop-down butto
 And lastly, after the player has selected his ideal game level, a play game button appear and he is able to 
 play the application by pressing the start game button.
 
-```
+
 ### For SCTF Members:
-```
+
 Upon successfully login into the SCTF page, the SCTF member is able to view the SCTF page.
 
 
-As the SCTF member, he is able to amend the number of vehicles and pedestrians which the amendments will take place
-in the game itself. Also, should the he wants to have a more relistic game experience for the players, he can 
-upload a 360 degree video into the application.
+As the SCTF member, he is able to amend the number of vehicles and pedestrians which the amendments will take place in the game itself. Also, should the he wants to have a more relistic game experience for the players, he can upload a 360 degree video into the application.
 
 
 After he has finalised the amendments, he will save the changes and the game will be amended based on the changes
 of the environment, number of vehicles and pedestrians that were set by the SCTF member.
 
-```
+
 ## VIDEO
- A YouTube link has being provided as a tutorial on how to use "CycleMyLyfe". The similar video is available when the user click the tutorial button. 
+A YouTube link has being provided as a tutorial on how to use "CycleMyLyfe". The similar video is available when the user click the tutorial button. 
 
 ## FAQ
 Q: How will the users are able to access the application?
