@@ -77,6 +77,15 @@
 		  		</a-animation>
 		  	</a-entity>
 
+		  	<a-text id="carmsg" value="Please stay clear of oncoming traffic and obey traffic rules" geometry="primitive:plane;height:0.5;width:4" position="-4 2.7 -18.960" text="align:center" visible="true">
+			    <a-animation attribute="position"
+			               dur="10000"
+			                fill="forwards"
+			                to="-4 2.7 50.686"
+			                repeat="indefinite">         
+			    </a-animation>
+   			</a-text>
+
 			<!-- CAR OPPOSITE DIRECTION -->
 			<a-entity id="2" gltf-model="#car" scale="0.02 0.02 0.02" position="-16 0.5 57.654" rotation="0 180 0">
 				<a-animation attribute="position"
@@ -91,18 +100,18 @@
 			<!-- WOMAN -->
 			<a-entity id="woman123" class="collidable" gltf-model="#woman" scale="0.011 0.011 0.011" geometry="primitive: box;" position="1 0.5 -18.960" rotation="0 0 0">
 				<a-animation attribute="position"
-			  		dur="22000"
+			  		dur="25000"
 			  		fill="forwards"
 			  		to="1 0.5 50.686"
 			  		repeat="indefinite"
 			  		>
 		  		</a-animation>
 			</a-entity>
-			<a-text id="woman1" value="Dont bang me you stupid bitch!!" geometry="primitive:plane;height:0.5;width:4" position="1 2.7 -18.960" text="align:center" visible="true">
+			<a-text id="woman1" value="Please keep to one side when sharing pedestrain walkways" geometry="primitive:plane;height:0.5;width:4" position="1 2.7 -18.960" text="align:center" visible="true">
 			    <a-animation attribute="position"
 			               dur="22000"
 			                fill="forwards"
-			                to="1 0.5 50.686"
+			                to="1 2.7 50.686"
 			                repeat="indefinite">         
 			    </a-animation>
    			</a-text>
