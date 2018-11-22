@@ -3,7 +3,7 @@
 The purpose of this software design specification document is to design and provide a detailed description of the architecture design with the help of pointers to give overall guidance to the “CycleMyLyfe” application.
 The description is required to coordinate the Safe Cycling Task Force (SCTF)’s aim to improve cycling safety in Singapore. It needs to be a stable reference and outline all parts of the software and how it works.
 
-# HOW TO RUN 
+## HOW TO RUN 
 Prior to the start of the application, the players are required to have a Google Cardboard to enjoy the full experience of the application.
 Both the Players and the SCTF Members will see this page when they asscssed our application for the very first time.
 
@@ -15,7 +15,7 @@ After they click the button,the application will brings them to the login page.
 
 Here, they are required to login with their credentials to access the application. However,  they have only 3 attempts to have a successfully login and should if they failed to login due to invalid credentials after 3 attempts, the users will be removed from the application.
 
-# For Players:
+### For Players:
 Upon successfully login into the player page, the player will have three options to choose for, which is the Rules & Regulations, Select Level and Play Game.
 
 
@@ -29,7 +29,7 @@ The player can choose a game level based on his preference via a drop-down butto
 
 And lastly, after the player has selected his ideal game level, he is able to play the application by pressing the start game button.
 
-# For SCTF Members:
+### For SCTF Members:
 Upon successfully login into the SCTF page, the SCTF member is able to view the SCTF page.
 
 
@@ -38,6 +38,6 @@ As the SCTF member, he is able to amend the number of vehicles and pedestrians w
 
 After he has finalised the amendments, he will save the changes and the game will be amended based on the changes of the environment, number of vehicles and pedestrians that were set by the SCTF member.
 
-# VIDEO
+## VIDEO
  A YouTube link has being provided as a tutorial on how to use "CycleMyLyfe". The similar video is available when the user click the tutorial button. 
 
