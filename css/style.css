@@ -255,6 +255,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
     opacity: 0.8;
 }
 
+.underline {
+  padding-bottom: 10px;
+  border-bottom: 5px solid #9C16DF;
+}
+
 
 /*------------------------------------*\
 	Logo
@@ -506,6 +511,11 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 
 /* -- nav btn collapse -- */
+
+span.enabled {
+    padding-bottom: 30px; 
+    border-bottom: 4px solid #9C16DF;
+}
 
 .nav-collapse {
     position: relative;
@@ -1548,7 +1558,6 @@ header {
   }
 
 
-
   .blog-author .media .media-left {
       display: block;
       padding-right: 0;
@@ -1568,6 +1577,13 @@ header {
   .blog-comments .media .media {
       margin:0px -15px;
   }
+}
+
+@media only screen and (max-width: 495px) {
+    span.enabled {
+        padding-bottom:0px; 
+        border-bottom: 0px solid #9C16DF;
+    }
 }
 
 
