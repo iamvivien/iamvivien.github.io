@@ -21,11 +21,13 @@ Upon successfully login into the player page, the player will have three options
 
 When the player click the Rules & Regulations button, he is able to see the ground rules he is required to follow for the application.
 
+The player can click the tutorial button to view the tutorial video on how the application works. 
 
-The player can choose a game level up to his preference via a drop-down button. 
+
+The player can choose a game level based on his preference via a drop-down button. 
 
 
-And lastly, after the player has selected his ideal game level, he is able to play the application.
+And lastly, after the player has selected his ideal game level, he is able to play the application by pressing the start game button.
 
 # For SCTF Members:
 Upon successfully login into the SCTF page, the SCTF member is able to view the SCTF page.
@@ -37,5 +39,5 @@ As the SCTF member, he is able to amend the number of vehicles and pedestrians w
 After he has finalised the amendments, he will save the changes and the game will be amended based on the changes of the environment, number of vehicles and pedestrians that were set by the SCTF member.
 
 # VIDEO
- A YouTube link has being provided as a preview on how "CycleMyLyfe" works.
+ A YouTube link has being provided as a tutorial on how to use "CycleMyLyfe". The similar video is available when the user click the tutorial button. 
 
