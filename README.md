@@ -54,3 +54,6 @@ the environment, number of vehicles and pedestrians that were set by the SCTF me
 ## VIDEO
  A YouTube link has being provided as a tutorial on how to use "CycleMyLyfe". The similar video is available when the user click the tutorial button. 
 
+## FAQ
+Q: How will the users are able to access the application?
+A: You can access the application via iamvivien.github.io
