@@ -12,7 +12,7 @@ Both the Players and the SCTF Members will see this page when they asscssed our 
 
 After they click the button,the application will brings them to the login page.
 
-
+![Login](https://github.com/iamvivien/iamvivien.github.io/blob/master/screenshots/login.png?raw=true)
 
 Here, they are required to login with their credentials to access the application. However,they have only 3 attempts to have a successfully login and should if they failed to login due to invalid credentials after 3 attempts, the users will be removed from the application.
 
