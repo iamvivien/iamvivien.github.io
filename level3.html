@@ -10,15 +10,15 @@
 
         <!-- ADD THESE SCRIPTS FOR TRAFFIC LIGHT'S ANIMATION -->
         <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script>
-        <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>
+        <script src="https://rawgit.com/donmccurdy/aframe-extras/v2.1.1/dist/aframe-extras.loaders.min.js"></script>  
     </head>
     
     <body>
         <a-scene>
             <!-- ASSETS -->
             <a-assets>
-            <img id="pedestrian" src="images/stickman.png">
-            <img id="cyclist" src="images/cyclists.png">
+                <img id="pedestrian" src="images/stickman.png">
+                <img id="cyclist" src="images/cyclists.png">
                 <a-asset-item id="street" src="models/city_1/scene.gltf"></a-asset-item>
                 <a-asset-item id="traffic" src="models/traffic_light/scene.gltf"></a-asset-item>
                 <a-asset-item id="bicycle" src="models/bicycle/Bike.gltf"></a-asset-item>
@@ -27,7 +27,7 @@
             <!-- USER MODEL -->
             <a-entity position="0 1.8 -0.5">
                 <a-camera id="cam" user-height="1.8" wasd-controls="acceleration: 100" cursor="rayOrigin: mouse">
-                    <a-entity gltf-model="#bicycle" scale="0.001 0.001 0.001" position="0 -0.780 -0.5" rotation="0 180 0"></a-entity>
+                    <a-entity id="user_bicycle" gltf-model="#bicycle" scale="0.001 0.001 0.001" position="0 -0.780 -0.5" rotation="0 180 0"></a-entity>
                     <a-sphere raycaster="objects: .collidable; near: 0.2" position="0 -0.9 0" geometry="radius:0.5"></a-sphere>
                     <a-entity raycaster="objects: .collidable; near: 0.2" rotation="0 90 0"></a-entity>
                     <a-entity raycaster="objects: .collidable; near: 0.2" rotation="0 270 0"></a-entity>
@@ -36,14 +36,86 @@
 
             <!-- STREET ENVIRONMENT -->
             <a-entity gltf-model="#street" scale="0.04 0.04 0.04" position="11.5 4.904 7"></a-entity>
-            <a-entity gltf-model="#traffic" scale="0.05 0.05 0.05" position="25 0.2 -18" rotation="0.4 8.5 1.5" animation-mixer></a-entity>
-            <a-entity 
-            id="dialog"
-            position="11.5 0.8 -8"
-            dialog-popup="
-            title: Challenge 1:;
-            body:  Cross the road to get some reward!;">
-            </a-entity>
+            <a-entity gltf-model="#traffic" scale="0.05 0.05 0.05" position="24.767 0.2 -17.3" rotation="0.4 8.5 1.5" animation-mixer></a-entity>
+            <a-sphere position="24.75 2.85 -17" radius="0.2" color="green"></a-sphere>
+
+
+            <a-box id="firstClose" color="red" width="0.5" height="0.5" depth="0.001"
+                position="1.2 3.1 -4.9"
+                text="align: center; color: black; value: Close;  wrap-count:5 ">
+            </a-box>
+
+            <a-box color="pink" id="firstMsg" width="3" height="3" depth="0.001"
+                position="0 2 -5"
+                text="align: center; color: black; value: Please cycle to your right >>>; wrap-count:30">
+            </a-box>
+
+            <a-box color="aliceblue" width="3" height="3" depth="0.001" position="24.5 2 -5" rotation="0 -85 0"
+                text="align: center; color: black; value: You have reached a pedestrian crossing. Should you continue to cycle across?">
+            </a-box>
+
+            <a-box id="yes" color="yellowgreen" width="0.5" height="0.5" depth="0.001" position="24.45 1 -5.5" rotation="0 -85 0">
+                <a-text  color="black" align="center" width="3" font="aileronsemibold" value="Yes" ></a-text> 
+            </a-box>
+
+            <a-box id="no" color="tomato" width="0.5" height="0.5" depth="0.001" position="24.45 1 -4.5" rotation="0 -85 0">
+                <a-text  color="black" align="center" width="3" font="aileronsemibold" value="No" ></a-text> 
+            </a-box>     
         </a-scene>
-    </body>
+    
+        <script>document.querySelector('#yes').addEventListener('click', function (evt) {
+            var messagebox1 = document.createElement('a-box');
+            var successText = document.createElement('a-text');
+            messagebox1.setAttribute('position', "24.4 2 -5");
+            messagebox1.setAttribute('width', 3);
+            messagebox1.setAttribute('height', 3);
+            messagebox1.setAttribute('depth', 0.001);
+            messagebox1.setAttribute('rotation', "0 -85 0");
+            messagebox1.setAttribute('color', "snow");
+            messagebox1.setAttribute('id', "msg1");
+
+
+            successText.setAttribute('value', "NO! Do not cycle across pedestrian crossings. You should dismount and push your bicycle.");
+            successText.setAttribute('align', "center");
+            successText.setAttribute('width', 3);
+            successText.setAttribute('font', "aileronsemibold");
+            successText.setAttribute('color', "black");
+
+            document.querySelector('a-scene').appendChild(messagebox1);
+            document.querySelector('#msg1').appendChild(successText);
+        });
+
+        document.querySelector('#no').addEventListener('click', function (evt) {
+            var messagebox1 = document.createElement('a-box');
+            var successText = document.createElement('a-text');
+            messagebox1.setAttribute('position', "24.4 2 -5");
+            messagebox1.setAttribute('width', 3);
+            messagebox1.setAttribute('height', 3);
+            messagebox1.setAttribute('depth', 0.001);
+            messagebox1.setAttribute('rotation', "0 -85 0");
+            messagebox1.setAttribute('color', "snow");
+            messagebox1.setAttribute('id', "msg1");
+
+
+            successText.setAttribute('value', "Well done! You have obeyed traffic rules. Keep up the good work on practicing good cycling etiquette.");
+            successText.setAttribute('align', "center");
+            successText.setAttribute('width', 3);
+            successText.setAttribute('font', "aileronsemibold");
+            successText.setAttribute('color', "black");
+
+            document.querySelector('a-scene').appendChild(messagebox1);
+            document.querySelector('#msg1').appendChild(successText);
+        });    
+
+        document.querySelector('#firstClose').addEventListener('click', function (evt) {
+            var msgBox1 = document.querySelector('#firstMsg');
+            msgBox1.parentNode.removeChild(msgBox1);
+            var msgBox2 = document.querySelector('#firstClose');
+            msgBox2.parentNode.removeChild(msgBox2);
+        }); 
+        </script>
+    
+    
+    
+</body>
 </html>
