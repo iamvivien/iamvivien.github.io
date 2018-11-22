@@ -31,7 +31,7 @@
 	<!-- Header -->
 	<header id="home">
 		<!-- Background Image -->
-		<div class="bg-img" style="background-image: url('images/background2.jpg');">
+		<div class="bg-img" style="background-image: url('images/background3.jpg');">
 			<div class="overlay"></div>
 		</div>
 		<!-- /Background Image -->
@@ -264,6 +264,18 @@
           	window.location.href = "sctf.html";
           }
         }
+        
+		var level;
+
+		$('.dropdown-menu a').click(function(){
+    		level = $('#level').text($(this).text());
+    		$('#start_btn').show();
+  		});
+
+		function get_session_name() {
+			var username = sessionStorage.getItem("username");
+			document.getElementById("welcome").innerHTML = "Welcome, " + username + "!";
+		}
 
 		function start_game() {
 			if (level.text() == "Level 1") {
