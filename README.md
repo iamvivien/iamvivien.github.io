@@ -21,7 +21,7 @@ Here, they are required to login with their credentials to access the applicatio
 ### For Players:
 ```
 Upon successfully login into the player page, the player will have three options to choose for,
-which is the Rules & Regulations, Select Level and Play Game.
+which is the Rules & Regulations, Tutorial and Select Level.
 
 
 When the player click the Rules & Regulations button, he is able to see the ground rules he is required to follow
@@ -33,8 +33,8 @@ The player can click the tutorial button to view the tutorial video on how the a
 The player can choose a game level based on his preference via a drop-down button. 
 
 
-And lastly, after the player has selected his ideal game level, he is able to play the application by pressing
-the start game button.
+And lastly, after the player has selected his ideal game level, a play game button appear and he is able to 
+play the application by pressing the start game button.
 
 ```
 ### For SCTF Members:
