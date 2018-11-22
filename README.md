@@ -4,7 +4,7 @@ The purpose of this software design specification document is to design and prov
 The description is required to coordinate the Safe Cycling Task Force (SCTF)’s aim to improve cycling safety in Singapore. It needs to be a stable reference and outline all parts of the software and how it works.
 
 ## HOW TO RUN 
-```
+
 Prior to the start of the application, the players are required to have a Google Cardboard to enjoy the full experience of the application.
 Both the Players and the SCTF Members will see this page when they asscssed our application for the very first time.
 
@@ -14,16 +14,18 @@ After they click the button,the application will brings them to the login page.
 
 
 
-Here, they are required to login with their credentials to access the application. However,  they have only 3 attempts to have a successfully login and should if they failed to login due to invalid credentials after 3 attempts, the users will be removed from the application.
+Here, they are required to login with their credentials to access the application. However,they have only 3 attempts to have a successfully login and should if they failed to login due to invalid credentials after 3 attempts, the users will be removed from the application.
 
 
-```
+
 ### For Players:
 ```
-Upon successfully login into the player page, the player will have three options to choose for, which is the Rules & Regulations, Select Level and Play Game.
+Upon successfully login into the player page, the player will have three options to choose for,
+which is the Rules & Regulations, Tutorial and Select Level.
 
 
-When the player click the Rules & Regulations button, he is able to see the ground rules he is required to follow for the application.
+When the player click the Rules & Regulations button, he is able to see the ground rules he is required to follow
+for the application.
 
 The player can click the tutorial button to view the tutorial video on how the application works. 
 
@@ -31,7 +33,8 @@ The player can click the tutorial button to view the tutorial video on how the a
 The player can choose a game level based on his preference via a drop-down button. 
 
 
-And lastly, after the player has selected his ideal game level, he is able to play the application by pressing the start game button.
+And lastly, after the player has selected his ideal game level, a play game button appear and he is able to 
+play the application by pressing the start game button.
 
 ```
 ### For SCTF Members:
@@ -39,10 +42,13 @@ And lastly, after the player has selected his ideal game level, he is able to pl
 Upon successfully login into the SCTF page, the SCTF member is able to view the SCTF page.
 
 
-As the SCTF member, he is able to amend the number of vehicles and pedestrians which the amendments will take place in the game itself. Also, should the he wants to have a more relistic game experience for the players, he can upload a 360 degree video into the application.
+As the SCTF member, he is able to amend the number of vehicles and pedestrians which the amendments will take place
+in the game itself. Also, should the he wants to have a more relistic game experience for the players, he can 
+upload a 360 degree video into the application.
 
 
-After he has finalised the amendments, he will save the changes and the game will be amended based on the changes of the environment, number of vehicles and pedestrians that were set by the SCTF member.
+After he has finalised the amendments, he will save the changes and the game will be amended based on the changes of
+the environment, number of vehicles and pedestrians that were set by the SCTF member.
 
 ```
 ## VIDEO
