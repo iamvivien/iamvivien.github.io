@@ -58,16 +58,10 @@
 			<a-entity id="13" environment="ground: flat; groundColor:#454545; groundColor2:#454545;"></a-entity>
 
 
-			<!--Add in 360degree image -->
-			<!-- <a-scene>
-			<a-assets>
-			  <img id="sky" src="https://cdn.glitch.com/a6a8c624-61c4-4134-932b-21f7e7eb4455%2Fbackground.jpg?1542257727833">
-			</a-assets>
-			<a-sky src="#sky"></a-sky>
-			</a-scene> -->
+			
 
 			<!-- CAR -->
-			<<a-entity id="1" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -18.960" rotation="0 0 0">
+			<a-entity id="1" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -18.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -99,7 +93,7 @@
 			  		>
 		  		</a-animation>
 			</a-entity>
-			<!-- woman text message -->
+			<!-- WOMAN TEXT MESSAGE -->
 			<a-text id="woman1" value="Please keep to one side when sharing pedestrain walkways" geometry="primitive:plane;height:0.5;width:5" position="5.752 2.7 -14.869" text="align:center" visible="true">
 			    <a-animation attribute="position"
 			               dur="25000"
@@ -108,22 +102,12 @@
 			                repeat="indefinite">         
 			    </a-animation>
    			</a-text>
-
-   			<!-- car message -->
-   			<!--<a-entity value="Please stay clear of oncoming traffic and obey traffic rules" geometry="primitive:plane;height:0.5;width:5" position="-4 2.7 -18.960" text="align:center" material="color:black" visible="true">
-   				<a-animation attribute="position"
-			               dur="20000"
-			                fill="forwards"
-			                to="-4 2.7 50.686"
-			                repeat="indefinite">         
-			    </a-animation>
-   			</a-entity>-->
-   		
-		  	<a-text id="carmsg" value="Please stay clear of oncoming traffic and obey traffic rules" geometry="primitive:plane;height:0.5;width:5" position="5.752 2.7 -14.869" text="align:center" visible="true">
+   			<!-- CAR MESSAGE -->
+		  	<a-text id="carmsg" value="Please stay clear of oncoming traffic and obey traffic rules" geometry="primitive:plane;height:0.5;width:5" position="-4 0.7 -18.960" text="align:center" visible="true">
 			    <a-animation attribute="position"
 			               dur="25000"
 			                fill="forwards"
-			                to="5.752 2.7 59.746"
+			                to="-4 0.7 50.686"
 			                repeat="indefinite">         
 			    </a-animation>
    			</a-text> 
