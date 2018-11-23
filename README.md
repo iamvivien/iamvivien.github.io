@@ -21,7 +21,7 @@ The player can select the "Tutorial" button to view the tutorial video for an ov
 
 The application comes with 3 different stages that allows the player to select via a drop-down list. 
 
-Lastly, once the player has selected the ideal stage, a "Start Game" button will become visible. The game will begin once the button is selected.
+Lastly, once the player has selected the ideal stage, a "Start Game" button will become visible. The game will begin once thecstart button is selected. Should if the player wants to exit the application, he can just simply click the logout button.
 
 
 ### **For SCTF Members:**
