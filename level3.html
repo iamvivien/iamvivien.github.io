@@ -155,6 +155,7 @@
                     movement.setAttribute('to', "20.05 0 -3");
                     document.querySelector('#cam').appendChild(movement);
         }
+        moveToFirstQuestion();
 
         function afterFirstQuestion() {
             var movement = document.createElement('a-animation');
@@ -164,6 +165,7 @@
                     movement.setAttribute('to', "23 0 -4");
                     document.querySelector('#cam').appendChild(movement);
         }  
+        afterFirstQuestion();
     </script>
 
 
