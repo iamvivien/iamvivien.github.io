@@ -143,7 +143,7 @@
 							<input type="email" class="input" placeholder="Email">
 							<input type="text" class="input" placeholder="Subject">
 							<textarea class="input" placeholder="Message"></textarea>
-							<button class="main-btn">Send message</button>
+							<button class="main-btn" onclick="save_form()">Send message</button>
 						</form>
 					</div>
 					<!-- /contact form -->
@@ -212,6 +212,12 @@
 			sessionStorage.clear();
 			window.location.href = "index.html";
 		});
+
+		function save_form() {
+			alert("Thank you for contacting us! We will get back to you in 1-2 working days.");
+			location.reload();
+		}
+
 	</script>
 	<!-- jQuery Plugins -->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
