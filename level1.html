@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
         <title>CycleMyLyfe • Level 1</title>
         <meta name="description" content="Road Safety • Level 1">
+        <!-- jQuery Plugins -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 
@@ -11,11 +13,31 @@
 			AFRAME.registerComponent('collider-check', {
 				dependencies: ['raycaster'],
 				init: function () {
-					this.el.addEventListener('raycaster-intersection', function (e) {
-				  		console.log('Player hit something! ' + e.target.id);
+					var timeout;
+					this.el.addEventListener('raycaster-intersection-cleared', function(e) {
+				  		var error_text = document.getElementById("error_text");
+				  		clearTimeout(timeout);
+						error_text.setAttribute('text', {
+							align:'center',
+							width:12,
+							wrapCount:100,
+							color:'red',
+							value:'You have hit someone or something! Please be careful.'
+						});
+
+						timeout = setTimeout(function(){
+							error_text.setAttribute('text', {
+								align:'center',
+								width:3,
+								wrapCount:100,
+								color:'red',
+								value:''
+							});
+						}, 4000);
 					});
 				}
 			});
+
 		</script>
 	</head>
 	<body>
@@ -33,11 +55,12 @@
 			<!-- USER MODEL -->
 			<a-entity position="0 1.8 50">
 				<a-camera id="cam" user-height="1.8" wasd-controls="acceleration: 100">
-					<a-entity gltf-model="#bicycle"geometry="primitive: box;" scale="0.001 0.001 0.001" position="0 -0.638 0" rotation="0 180 0"></a-entity>
+					<a-entity gltf-model="#bicycle" scale="0.001 0.001 0.001" position="0 -0.5 0" rotation="0 180 0"></a-entity>
+					<!-- <a-text id="error_text" value="Oh no you hit something/someone! Please be careful." position="0 2.138 -5.991" text="align:center" visible="false"></a-text> -->
+					<a-entity id="error_text" position="0 2.138 -5.991"></a-entity>
 					<a-sphere raycaster="objects: .collidable; far: 0.4" position="0 0 0" geometry="radius:0.5"></a-sphere>
-					<a-entity raycaster="objects: .collidable; far: 0.4" rotation="0 90 0"></a-entity>
-					<a-entity raycaster="objects: .collidable; far: 0.4" rotation="0 270 0"></a-entity>
-					
+					<a-entity raycaster="objects: .collidable; far: 0.4" rotation="0 25 0"></a-entity>
+					<a-entity raycaster="objects: .collidable; far: 0.4" rotation="0 335 0"></a-entity>
 				</a-camera>
 			</a-entity>
 				
@@ -58,7 +81,7 @@
 			<a-entity id="13" environment="ground: flat; groundColor:#454545; groundColor2:#454545;"></a-entity>
 
 			<!-- CAR -->
-			<a-entity id="1" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -18.960" rotation="0 0 0">
+			<a-entity id="1" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -18.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -69,7 +92,7 @@
 		  	</a-entity>
 
 			<!-- CAR OPPOSITE DIRECTION -->
-			<a-entity id="2" gltf-model="#car" scale="0.02 0.02 0.02" position="-16 0.5 57.654" rotation="0 180 0">
+			<a-entity id="2" name="car" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-16 0.5 57.654" rotation="0 180 0">
 				<a-animation attribute="position"
 			  		dur="10000"
 			  		fill="backwards"
@@ -80,7 +103,7 @@
 			</a-entity>
 
 			<!-- WOMAN -->
-			<a-entity id="woman123" class="collidable" gltf-model="#woman" scale="0.011 0.011 0.011" geometry="primitive: box;" position="5.752 0.5 -14.869" rotation="0 0 0">
+			<a-entity id="woman123" name="woman" class="collidable" geometry="primitive: box" gltf-model="#woman" scale="0.011 0.011 0.011"  position="5.752 0.5 -14.869" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="25000"
 			  		fill="forwards"
@@ -110,5 +133,9 @@
 			    </a-animation>
    			</a-text> 
 		</a-scene>
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
 	</body>
 </html>
