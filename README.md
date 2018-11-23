@@ -15,11 +15,11 @@ Here, they are required to login with their credentials to access the applicatio
 
 Upon successfully login into the player page, the player will have three options to choose from. They are "Rules & Regulations", "Tutorial" and "Select Level".
 
-When the player selects the "Rules & Regulations" button, general rules of the application will be displayed.
+When the player selects the "Rules & Regulations" button, general rules of the application will be displayed. Also, the players are encouraged to provide feedback on their experiences in playing the application for further improvement.
 
-The player can select the "Tutorial" button to view the tutorial video for an overview on how the application works. 
+The player can select the "Tutorial" button to view the tutorial video for an overview on how the appl ication works. 
 
-The player can select different stages of the application via a drop-down list. 
+The application comes with 3 different stages that allows the player to select via a drop-down list. 
 
 Lastly, once the player has selected the ideal stage, a "Start Game" button will become visible. The game will begin once the button is selected.
 
