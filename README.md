@@ -5,16 +5,11 @@
 ## **HOW TO RUN**
 
 Prior to launching the application, players are required to have a Google Cardboard to enjoy the full experience of the application.
-Both the Players and the SCTF Members will see this page when they access our application.
+Both the Players and the SCTF Members will see this page when they access our application. 
 
-![Home](https://github.com/iamvivien/iamvivien.github.io/blob/master/screenshots/index.png?raw=true)
+After selecting the "Login" button,the application will bring them to the login page. For the players accessing the application for the first time, they are required to sign up as a new member.
 
-After selecting the "Login" button,the application will bring them to the login page.
-
-![Login](https://github.com/iamvivien/iamvivien.github.io/blob/master/screenshots/login.png?raw=true)
-
-Here, they are required to login with their credentials to access the application. However, they only have 3 attempts login successfully and should they fail to do so due to invalid credentials after the last attempt, the necessary fields will be disabled. Players will be allowed to re-try again after refreshing the page. 
-
+Here, they are required to login with their credentials to access the application. However, they only have 3 attempts login successfully and should they fail to do so due to invalid credentials after the last attempt, the necessary fields will be disabled. Players will be allowed to re-try again after refreshing the page or they can reset their username or password by clicking on the 'forget username/password' link.
 
 ### **For Players:**
 
