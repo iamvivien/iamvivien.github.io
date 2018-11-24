@@ -67,7 +67,8 @@
 			    	
 			    } else {
 			    	// dialog_element.innerHTML = "<dialog id='dialog'><form method='dialog' style='width:520px;'><p><label>Oh no! I hope you understand that cycling on a public road after dark without lights is illegal. Not only that, it is dangerous for both you and other pedestrians. Please be careful next time.</label></p><menu><button>Ok</button></menu></form></dialog>";
-			     	
+			     	lights_element.removeAttribute('light');
+
 				    var error_text = document.getElementById("error_text");
 				    clearTimeout(timeout);
 					error_text.setAttribute('text', {
@@ -87,8 +88,6 @@
 							value:''
 						});
 					}, 10000);
-
-					lights_element.removeAttribute('light');
 			    }
 
 			    // var dialog = document.getElementById('dialog');
