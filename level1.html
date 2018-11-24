@@ -4,10 +4,33 @@
 		<meta charset="utf-8">
         <title>CycleMyLyfe • Level 1</title>
         <meta name="description" content="Road Safety • Level 1">
+
         <!-- jQuery Plugins -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+
+		<!-- Favicons -->
+		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicomatic/apple-touch-icon-57x57.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/favicomatic/apple-touch-icon-114x114.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/favicomatic/apple-touch-icon-72x72.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/favicomatic/apple-touch-icon-144x144.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/favicomatic/apple-touch-icon-60x60.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/favicomatic/apple-touch-icon-120x120.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/favicomatic/apple-touch-icon-76x76.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/favicomatic/apple-touch-icon-152x152.png" />
+		<link rel="icon" type="image/png" href="images/favicomatic/favicon-196x196.png" sizes="196x196" />
+		<link rel="icon" type="image/png" href="images/favicomatic/favicon-96x96.png" sizes="96x96" />
+		<link rel="icon" type="image/png" href="images/favicomatic/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="images/favicomatic/favicon-16x16.png" sizes="16x16" />
+		<link rel="icon" type="image/png" href="images/favicomatic/favicon-128.png" sizes="128x128" />
+		<meta name="application-name" content="&nbsp;"/>
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+		<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+		<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+		<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+		<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+		<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 
 		<script>
 			AFRAME.registerComponent('collider-check', {
@@ -37,7 +60,6 @@
 					});
 				}
 			});
-
 		</script>
 	</head>
 	<body>
@@ -56,7 +78,6 @@
 			<a-entity position="0 1.8 50">
 				<a-camera id="cam" user-height="1.8" wasd-controls="acceleration: 100">
 					<a-entity gltf-model="#bicycle" scale="0.001 0.001 0.001" position="0 -0.5 0" rotation="0 180 0"></a-entity>
-					<!-- <a-text id="error_text" value="Oh no you hit something/someone! Please be careful." position="0 2.138 -5.991" text="align:center" visible="false"></a-text> -->
 					<a-entity id="error_text" position="0 2.138 -5.991"></a-entity>
 					<a-sphere raycaster="objects: .collidable; far: 0.4" position="0 0 0" geometry="radius:0.5"></a-sphere>
 					<a-entity raycaster="objects: .collidable; far: 0.4" rotation="0 25 0"></a-entity>
