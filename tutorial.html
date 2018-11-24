@@ -30,7 +30,7 @@
     <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
-
+        
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
 
@@ -44,7 +44,7 @@
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="css/style.css" />
 
-	<!-- jQuery Plugins -->
+	<!-- JQuery Script for dropdown to work -->
 	<script type="text/javascript" src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
 </head>
@@ -53,7 +53,7 @@
 	<!-- Header -->
 	<header id="home">
 		<!-- Background Image -->
-		<div class="bg-img" style="background-image: url('images/background3.jpg');">
+		<div class="bg-img" style="background-image: url('images/background2.jpg');">
 			<div class="overlay"></div>
 		</div>
 		<!-- /Background Image -->
@@ -93,17 +93,20 @@
 		<div class="home-wrapper">
 			<div class="container">
 				<div class="row">
-
 					<!-- home content -->
 					<div class="col-md-10 col-md-offset-1">
 						<div class="home-content">
 							<h1 class="white-text">CycleMyLyfe</h1>
+							<a class="ct-btn-scroll ct-js-btn-scroll" href="#section01"><img alt="Arrow Down Icon" src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
+							<p></p>
 							<p class="white-text" id="welcome"></p>
 							<div class="btn-group">
 								<button class="white-btn" onclick="window.location.href='rules.html';">Rules & Regulations</button>
 							</div>
 							<div class="btn-group">
-								<button class="white-btn" onclick="window.location.href='tutorial.html';">Tutorial</button>
+								<span class="enabled" style="">
+									<button class="white-btn" style="background: #ddd; pointer-events: none;">Tutorial</button>
+								</span>
 							</div>
 							<div class="btn-group">
 								<button id="level" type="button" class="main-btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Select Level
@@ -120,15 +123,50 @@
 						</div>
 					</div>
 					<!-- /home content -->
-
 				</div>
 			</div>
+				
 		</div>
 		<!-- /home wrapper -->
 
 	</header>
 	<!-- /Header -->
 
+	<section id="section01">
+		<!-- Contact -->
+		<div id="contact" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Row -->
+				<div class="row">
+
+					<!-- Section-header -->
+					<div class="section-header text-center">
+						<h2 class="title">Game Tutorial</h2>
+					</div>
+					<!-- /Section-header -->
+
+					<!-- contact form -->
+					<div class="embed-responsive embed-responsive-16by9">
+  						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/4X4Av3WgN1o" allowfullscreen></iframe>
+					</div>
+					<!-- /contact form -->
+
+				</div>
+				<!-- /Row -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+		<!-- /Contact -->
+	</section>
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
 
 	<!-- Footer -->
 	<footer id="footer" class="sm-padding bg-dark">
@@ -196,13 +234,18 @@
           	window.location.href = "sctf.html";
           }
         }
-
+        
 		var level;
 
 		$('.dropdown-menu a').click(function(){
     		level = $('#level').text($(this).text());
     		$('#start_btn').show();
   		});
+
+		function get_session_name() {
+			var username = sessionStorage.getItem("username");
+			document.getElementById("welcome").innerHTML = "Welcome, " + username + "!";
+		}
 
 		function start_game() {
 			if (level.text() == "Level 1") {
@@ -217,6 +260,20 @@
 				window.location.href = "level3.html";
 			}
 		}
+
+		$(document).ready(function(){
+	        $("a").on('click', function(event) {
+	            if (this.hash !== "") {
+	                event.preventDefault();
+	                var hash = this.hash;
+	                $('html, body').animate({
+	                scrollTop: $(hash).offset().top
+	                }, 800, function(){
+	                    window.location.hash = hash;
+	                });
+	            } 
+	        });
+	    });  		
 
 		$('.logout').on("click",function(){
 			sessionStorage.clear();
