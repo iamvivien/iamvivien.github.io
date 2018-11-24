@@ -88,8 +88,8 @@
 			<!-- ROADS AND WALKWAY -->
 			<a-entity id="4" gltf-model="#sidewalk" scale="0.02 0.02 0.02" position="2.854 0.431 3.429" rotation="0 90 0"></a-entity>
 		  	<a-entity id="5" gltf-model="#sidewalk" scale="0.02 0.02 0.02" position="2.854 0.431 42.45" rotation="0 90 0"></a-entity>
-			<a-entity id="6" gltf-model="#road" scale="4 4 4" position="-4.926 -3.92 -5.702" rotation="0 0 0"></a-entity>
-			<a-entity id="7" gltf-model="#road" scale="4 4 4" position="-4.926 -3.92 17.607" rotation="0 0 0"></a-entity>
+			<a-entity id="6" gltf-model="#road" scale="4 4 4" position="-4.926 -3.92 -5.734" rotation="0 0 0"></a-entity>
+			<a-entity id="7" gltf-model="#road" scale="4 4 4" position="-4.926 -3.92 17.509" rotation="0 0 0"></a-entity>
 		  	<a-entity id="8" gltf-model="#road" scale="4 4 4" position="-4.926 -3.92 40.76" rotation="0 0 0"></a-entity>
 			<a-entity id="9" gltf-model="#road" scale="4 4 4" position="-16.143 -3.933 -5.734" rotation="0 0 0"></a-entity>
 			<a-entity id="10" gltf-model="#road" scale="4 4 4" position="-16.143 -3.918 17.509" rotation="0 0 0"></a-entity>
@@ -152,7 +152,13 @@
 	                to="-4 2.494 50.686"
 	                repeat="indefinite">         
 			    </a-animation>
-   			</a-text> 
+   			</a-text>
+
+   			<!-- CHECKPOINT -->
+   			<a-cylinder id="14" position="0 -0.5 -14.869" id="clear" height="3" radius="1.5" material="color: cyan; opacity: 0.2;">
+        		<a-entity position="0 5.749 0" text="align: center; width: 50; wrapCount: 100; color: black; value: Checkpoint" rotation="" scale="" visible="" scale="1.5 1.5 1.5"></a-entity>
+      		</a-cylinder>
+
 		</a-scene>
 
 		<!-- jQuery Plugins -->
