@@ -17,7 +17,7 @@ Upon successfully login into the player page, the player will have three options
 
 When the player selects the "Rules & Regulations" button, general rules of the application will be displayed. Also, the players are encouraged to provide feedback on their experiences in playing the application for further improvement.
 
-The player can select the "Tutorial" button to view the tutorial video for an overview on how the appl ication works. 
+The player can select the "Tutorial" button to view a video demonstration on how to play the game. 
 
 The application comes with 3 different stages that allows the player to select via a drop-down list. 
 
@@ -30,11 +30,11 @@ Upon successful login into the SCTF page, the SCTF member will be able to view t
 
 The SCTF member will be able to amend the number of vehicles and pedestrians that will appear in game. An option to upload a 360 degree video to represent the environment is also available. 
 
-The environment will be updated accordingly after all changes made by the SCTF member are saved. 
+The environment will be updated accordingly after all changes made by the SCTF member are saved.
 
 
 ## **VIDEO**
-A YouTube link has being provided as a tutorial on how to use "CycleMyLyfe". The similar video is available when the user selects the "Tutorial" button. 
+A YouTube link has being provided on how to use "CycleMyLyfe" which they can access via 
 
 
 ## **FAQ**
