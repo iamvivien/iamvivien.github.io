@@ -60,6 +60,8 @@
 					});
 				}
 			});
+
+			// document.querySelector('a-link').navigate('destination.html');
 		</script>
 	</head>
 	<body>
@@ -72,6 +74,7 @@
 				<a-asset-item id="sidewalk" src="models/sidewalk/scene.gltf"></a-asset-item>
 				<a-asset-item id="bicycle" src="models/bicycle/Bike.gltf"></a-asset-item>
 				<a-asset-item id="house" src="models/house/house.gltf"></a-asset-item>
+				<img id="level2_thumbnail" src="images/level2.png">
 			</a-assets>
 
 			<!-- USER MODEL -->
@@ -155,9 +158,11 @@
    			</a-text>
 
    			<!-- CHECKPOINT -->
-   			<a-cylinder id="14" position="0 -0.5 -14.869" id="clear" height="3" radius="1.5" material="color: cyan; opacity: 0.2;">
+   			<!-- <a-cylinder id="14" position="0 -0.5 -14.869" height="3" radius="1.5" material="color: cyan; opacity: 0.2;">
         		<a-entity position="0 5.749 0" text="align: center; width: 50; wrapCount: 100; color: black; value: Checkpoint" rotation="" scale="" visible="" scale="1.5 1.5 1.5"></a-entity>
-      		</a-cylinder>
+      		</a-cylinder> -->
+
+      		<a-entity id="14" position="0 2 -14.869" scale="1.5 1.5 1.5" link="href: level2.html; title: Proceed to Level 2; image: #level2_thumbnail"></a-entity>
 
 		</a-scene>
 
