@@ -9,6 +9,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+		<script src="js/link-controls.js"></script>
+		<script src="js/camera-position.js"></script>
+		<script src="js/aframe-tooltip-component.js"></script>
 
 		<!-- Favicons -->
 		<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/favicomatic/apple-touch-icon-57x57.png" />
@@ -61,11 +64,11 @@
 				}
 			});
 
-			// document.querySelector('a-link').navigate('destination.html');
 		</script>
 	</head>
 	<body>
 		<a-scene collider-check>
+			
 			<!-- ASSETS -->
 			<a-assets>
 				<a-asset-item id="car" src="models/car_1/scene.gltf"></a-asset-item> 
@@ -73,11 +76,12 @@
 				<a-asset-item id="road" src="models/road/model.gltf"></a-asset-item>
 				<a-asset-item id="sidewalk" src="models/sidewalk/scene.gltf"></a-asset-item>
 				<a-asset-item id="bicycle" src="models/bicycle/Bike.gltf"></a-asset-item>
+				<a-asset-item id="house" src="models/house/model.gltf"></a-asset-item>
+				<a-asset-item id="hdb" src="models/hdb/Apartment.gltf"></a-asset-item>
+				<a-asset-item id="oldhouse" src="models/oldhouse/scene.gltf"></a-asset-item>
 				<img id="level2_thumbnail" src="images/level2.png">
+				<img id="user_thumbnail" src="images/user.png">
 			</a-assets>
-
-			<!-- SOUND -->
-			<a-sound src="src: url(sounds/street.mp3)" loop="true" autoplay="true" position="0 2 5"></a-sound>
 
 			<!-- USER MODEL -->
 			<a-entity position="0 1.8 50">
@@ -89,7 +93,7 @@
 					<a-entity raycaster="objects: .collidable; far: 0.4" rotation="0 335 0"></a-entity>
 				</a-camera>
 			</a-entity>
-				
+			
 			<!-- ROADS AND WALKWAY -->
 			<a-entity id="4" gltf-model="#sidewalk" scale="0.02 0.02 0.02" position="2.854 0.431 3.429" rotation="0 90 0"></a-entity>
 		  	<a-entity id="5" gltf-model="#sidewalk" scale="0.02 0.02 0.02" position="2.854 0.431 42.45" rotation="0 90 0"></a-entity>
@@ -101,13 +105,16 @@
 		  	<a-entity id="11" gltf-model="#road" scale="4 4 4" position="-16.143 -3.918 40.76" rotation="0 0 0"></a-entity>
 
 		  	<!--Buildings -->
-		  	<a-entity id="12" gltf-model="#house" position="-20 -3.918 40.76"></a-entity>
+		  	<a-entity id="12" gltf-model="#house" scale="5 5 5" position="-3.797 8.399 42.798"></a-entity>
+		  	<a-entity id="13" gltf-model="#hdb" position="10.753 0 25.334" rotation="0 270 0"></a-entity>
+		  	<a-entity id="14" gltf-model="#oldhouse" scale="0.020 0.020 0.020" position="16.978 0.126 3.486"></a-entity>
 
 			<!-- GROUND AND SKY -->
-			<a-entity id="13" environment="ground: flat; groundColor:#454545; groundColor2:#454545;"></a-entity>
+			<a-entity id="15" environment="ground: flat; groundColor:#454545; groundColor2:#454545;"></a-entity>
 
 			<!-- CAR -->
 			<a-entity id="1" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -18.960" rotation="0 0 0">
+				<a-sound src="src: url(sounds/street.mp3)" loop="true" autoplay="true" volume="2"></a-sound>
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -119,8 +126,9 @@
 
 			<!-- CAR OPPOSITE DIRECTION -->
 			<a-entity id="2" name="car" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-16 0.5 57.654" rotation="0 180 0">
+				<a-sound src="src: url(sounds/street.mp3)" loop="true" autoplay="true" volume="0.5"></a-sound>
 				<a-animation attribute="position"
-			  		dur="10000"
+			  		dur="20000"
 			  		fill="backwards"
 			  		to="-16 0.5 -12.967"
 			  		repeat="indefinite"
@@ -131,7 +139,7 @@
 			<!-- WOMAN -->
 			<a-entity id="woman123" name="woman" class="collidable" geometry="primitive: box" gltf-model="#woman" scale="0.011 0.011 0.011"  position="5.752 0.5 -14.869" rotation="0 0 0">
 				<a-animation attribute="position"
-			  		dur="25000"
+			  		dur="50000"
 			  		fill="forwards"
 			  		to="5.752 0.5 59.746"
 			  		repeat="indefinite"
@@ -142,7 +150,7 @@
 			<!-- WOMAN TEXT MESSAGE -->
 			<a-text id="woman1" value="Please keep to one side when sharing pedestrain walkways" geometry="primitive:plane;height:0.5;width:5" position="5.752 2.7 -14.869" text="align:center" visible="true">
 			    <a-animation attribute="position"
-	               	dur="25000"
+	               	dur="50000"
 	                fill="forwards"
 	                to="5.752 2.7 59.746"
 	                repeat="indefinite">         
@@ -160,12 +168,8 @@
    			</a-text>
 
    			<!-- CHECKPOINT -->
-   			<!-- <a-cylinder id="14" position="0 -0.5 -14.869" height="3" radius="1.5" material="color: cyan; opacity: 0.2;">
-        		<a-entity position="0 5.749 0" text="align: center; width: 50; wrapCount: 100; color: black; value: Checkpoint" rotation="" scale="" visible="" scale="1.5 1.5 1.5"></a-entity>
-      		</a-cylinder> -->
-
-      		<a-entity id="14" position="0 2 -14.869" scale="1.5 1.5 1.5" link="href: level2.html; title: Proceed to Level 2; image: #level2_thumbnail"></a-entity>
-
+  		 	<a-link href="level2.html" image="#level2_thumbnail" title="Click to proceed to Level 2" position="0 2 -14.869" scale="1 1 1" raycaster="far: 5; objects: [link];" cursor="rayOrigin: mouse" camera-position></a-link>
+  		 	<a-link href="user.html" image="#user_thumbnail" title="Click to quit game" position="4 2 -14.869" scale="1 1 1" raycaster="far: 5; objects: [link];" cursor="rayOrigin: mouse" camera-position></a-link>
 		</a-scene>
 
 		<!-- jQuery Plugins -->
