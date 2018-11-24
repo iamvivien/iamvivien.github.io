@@ -29,10 +29,7 @@
 		
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
-<!-- 		<script src="js/aframe-dialog-popup-component.js"></script>
-		<script src="js/link-controls.js"></script>
-		<script src="js/camera-position.js"></script>
-		<script src="js/aframe-tooltip-component.js"></script> -->
+
 	</head>
 	<body>
 		<script type="text/javascript">
@@ -44,24 +41,56 @@
 				var scene = document.querySelector('a-scene');
 		    	var dialog_element = document.createElement('a-entity');
 		    	scene.appendChild(dialog_element);
+		    	var timeout;
 		    	
 			    if (confirm("It's nighttime. Turn on your headlights?")) {
 			    	dialog_element.innerHTML = "<dialog id='dialog'><form method='dialog' style='width:520px;'><p><label>Good job! You have followed the rules of cycling by turning on your headlights.</label></p><menu><button>Ok</button></menu></form></dialog>";
+			    	var error_text = document.getElementById("error_text");
+			  		clearTimeout(timeout);
+					error_text.setAttribute('text', {
+						align:'center',
+						width:12,
+						wrapCount:100,
+						color:'#BFFF00',
+						value:'Good job! You have followed the rules of cycling by turning on your headlights!'
+					});
+
+					timeout = setTimeout(function(){
+						error_text.setAttribute('text', {
+							align:'center',
+							width:3,
+							wrapCount:100,
+							color:'red',
+							value:''
+						});
+					}, 4000);
 			    	
 			    } else {
-			    	dialog_element.innerHTML = "<dialog id='dialog'><form method='dialog' style='width:520px;'><p><label>Oh no! I hope you understand that cycling on a public road after dark without lights is illegal. Not only that, it is dangerous for both you and other pedestrians. Please be careful next time.</label></p><menu><button>Ok</button></menu></form></dialog>";
-			        lights_element.removeAttribute('light');
+			    	// dialog_element.innerHTML = "<dialog id='dialog'><form method='dialog' style='width:520px;'><p><label>Oh no! I hope you understand that cycling on a public road after dark without lights is illegal. Not only that, it is dangerous for both you and other pedestrians. Please be careful next time.</label></p><menu><button>Ok</button></menu></form></dialog>";
+			     //    lights_element.removeAttribute('light');
+				    var error_text = document.getElementById("error_text");
+				    clearTimeout(timeout);
+					error_text.setAttribute('text', {
+						align:'center',
+						width:12,
+						wrapCount:100,
+						color:'red',
+						value:'Oh no! I hope you understand that cycling on a public road after dark without lights is illegal. Not only that, it is dangerous for both you and other pedestrians. Please be careful next time.'
+					});
+
+					timeout = setTimeout(function(){
+						error_text.setAttribute('text', {
+							align:'center',
+							width:3,
+							wrapCount:100,
+							color:'red',
+							value:''
+						});
+					}, 10000);
 			    }
 
-			    var dialog = document.getElementById('dialog');
-		    	dialog.showModal();
-			});
-
-			AFRAME.registerComponent('listener', {
-			  tick: function () {
-			  	var user_pos = this.el.getAttribute('position');
-			    console.log(user_pos);
-			  }
+			    // var dialog = document.getElementById('dialog');
+		    	// dialog.showModal();
 			});
 
 		</script>
@@ -88,6 +117,7 @@
 			<a-entity id="user_model" position="0 1.8 -3.842" rotation="0 90 0">
 				<a-camera listener id="cam" user-height="1.8" wasd-controls="acceleration: 100">
 					<a-entity id="user_bicycle" gltf-model="#bicycle" scale="0.001 0.001 0.001" position="0 -0.780 -0.5" rotation="0 180 0"></a-entity>
+					<a-entity id="error_text" position="0 2.138 -5.991"></a-entity>
 					<a-entity light="type: spot; intensity: 20; distance: 20; decay: 2" position="0 -0.276 -0.986"></a-entity>
 					<a-sphere raycaster="objects: .collidable; near: 0.2" position="0 -0.9 0" geometry="radius:0.5"></a-sphere>
 					<a-entity raycaster="objects: .collidable; near: 0.2" rotation="0 90 0"></a-entity>
