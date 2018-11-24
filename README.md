@@ -35,7 +35,7 @@ The environment will be updated accordingly after all changes made by the SCTF m
 
 
 ## **VIDEO**
-A YouTube link has being provided on how to use "CycleMyLyfe" which they can access via [here].
+A YouTube link has being provided on how to use "CycleMyLyfe" which they can access via [here](https://youtu.be/nftdN8sL8v8).
 
 
 ## **FEEDBACK**
