@@ -42,11 +42,10 @@
 		    	var dialog_element = document.createElement('a-entity');
 		    	scene.appendChild(dialog_element);
 		    	var timeout;
+		    	var error_text = document.getElementById("error_text");
+		    	clearTimeout(timeout);
 		    	
 			    if (confirm("It's nighttime. Turn on your headlights?")) {
-			    	// dialog_element.innerHTML = "<dialog id='dialog'><form method='dialog' style='width:520px;'><p><label>Good job! You have followed the rules of cycling by turning on your headlights.</label></p><menu><button>Ok</button></menu></form></dialog>";
-			    	var error_text = document.getElementById("error_text");
-			  		clearTimeout(timeout);
 					error_text.setAttribute('text', {
 						align:'center',
 						width:12,
@@ -66,11 +65,7 @@
 					}, 4000);
 			    	
 			    } else {
-			    	// dialog_element.innerHTML = "<dialog id='dialog'><form method='dialog' style='width:520px;'><p><label>Oh no! I hope you understand that cycling on a public road after dark without lights is illegal. Not only that, it is dangerous for both you and other pedestrians. Please be careful next time.</label></p><menu><button>Ok</button></menu></form></dialog>";
 			     	lights_element.removeAttribute('light');
-
-				    var error_text = document.getElementById("error_text");
-				    clearTimeout(timeout);
 					error_text.setAttribute('text', {
 						align:'center',
 						width:12,
@@ -87,11 +82,8 @@
 							color:'red',
 							value:''
 						});
-					}, 10000);
+					}, 8000);
 			    }
-
-			    // var dialog = document.getElementById('dialog');
-		    	// dialog.showModal();
 			});
 
 		</script>
@@ -99,20 +91,10 @@
 		<a-scene>
 			<!-- ASSETS -->
 			<a-assets>
-		      	<img id="pedestrian" src="images/stickman.png">
-		      	<img id="cyclist" src="images/cyclists.png">
-				<a-asset-item id="paths" src="models/paths/CUPIC_ROAD.gltf"></a-asset-item>
 				<a-asset-item id="park" src="models/park/scene.gltf"></a-asset-item>
 			    <a-asset-item id="bicycle" src="models/bicycle/Bike.gltf"></a-asset-item>
 			    <a-asset-item id="guy" src="models/guy/patrick.gltf"></a-asset-item>
 			</a-assets>
-
-			<!-- DIALOG -->
-			<!-- <a-camera id="camera" cursor="rayOrigin: mouse"></a-camera>
-			<a-entity id="dialog" position="-0.2 2 -2" scale="0.1 0.1 0.1" dialog-popup="
-					title: Alert!;
-			        body:  Please pick a lane.;">
-		    </a-entity> -->
 
 		    <!-- USER MODEL -->
 			<a-entity id="user_model" position="0 1.8 -3.842" rotation="0 90 0">
@@ -129,13 +111,6 @@
 			<!-- ENVIRONMENT -->
 			<a-entity gltf-model="#park" scale="1 1 1" position="-14.871 0.514 -4.272"></a-entity>
 
-			<!-- <a-entity gltf-model="#paths" scale="0.05 0.05 0.05" position="0.053 -0.563 -30"></a-entity> -->
-
-			<!-- PEDESTRIAN LANE -->
-			<!-- <a-image src="#pedestrian" scale="2 2 2" rotation="-90 0 0" position="-2.921 0.031 -12.12"></a-image> -->
-
-			<!-- PMD LANE -->
-			<!-- <a-image src="#cyclist" scale="2 2 2" rotation="-90 0 0" position="2.889 0.031 -11.553"></a-image> -->
 
 			<!-- BACKGROUND -->
 			<a-entity environment="lightPosition:100 1; ground:flat; groundColor:#454545; groundColor2:#454545;"></a-entity>
