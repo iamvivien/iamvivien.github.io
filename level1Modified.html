@@ -100,7 +100,7 @@
 			<a-entity id="13" environment="ground: flat; groundColor:#454545; groundColor2:#454545;"></a-entity>
 
 			<!-- CAR1 -->
-			<a-entity id="1" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -25.960" rotation="0 0 0">
+			<a-entity id="1" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 -25.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -108,10 +108,10 @@
 			  		repeat="indefinite"
 			  		>
 		  		</a-animation>
-			  </a-entity>
+		  </a-entity>
 			  
 			  <!-- CAR3 -->
-			<a-entity id="3" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 5.960" rotation="0 0 0">
+			<a-entity id="3" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 5.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -122,7 +122,7 @@
 			  </a-entity>
 			  
 			  <!-- CAR4 -->
-			<a-entity id="4" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 30.960" rotation="0 0 0">
+			<a-entity id="4" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 30.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -133,7 +133,7 @@
 			  </a-entity>
 			  
 			  <!-- CAR5 -->
-			<a-entity id="5" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 45.960" rotation="0 0 0">
+			<a-entity id="5" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-4 0.5 45.960" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="20000"
 			  		fill="forwards"
@@ -144,7 +144,7 @@
 			  </a-entity>
 
 			<!-- CAR OPPOSITE DIRECTION -->
-			<a-entity id="2" gltf-model="#car" scale="0.02 0.02 0.02" position="-16 0.5 57.654" rotation="0 180 0">
+			<a-entity id="2" class="collidable" geometry="primitive: box" gltf-model="#car" scale="0.02 0.02 0.02" position="-16 0.5 57.654" rotation="0 180 0">
 				<a-animation attribute="position"
 			  		dur="10000"
 			  		fill="backwards"
@@ -155,7 +155,7 @@
 			</a-entity>
 
 			<!-- WOMAN -->
-			<a-entity id="woman123" class="collidable" gltf-model="#woman" scale="0.011 0.011 0.011" geometry="primitive: box;" position="5.752 0.5 -14.869" rotation="0 0 0">
+			<a-entity id="woman123" class="collidable" geometry="primitive: box" gltf-model="#woman" scale="0.011 0.011 0.011" position="5.752 0.5 -14.869" rotation="0 0 0">
 				<a-animation attribute="position"
 			  		dur="25000"
 			  		fill="forwards"
@@ -185,5 +185,10 @@
 			    </a-animation>
    			</a-text>  -->
 		</a-scene>
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
 	</body>
 </html>
