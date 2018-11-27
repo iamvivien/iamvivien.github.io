@@ -1,0 +1,8 @@
+Team Contributions:
+
+Alfred Pang Wei Yang		    Frontend designer
+Angie Yip Ann Qi		    Frontend designer	
+Cassandra Leong Sok Yee            Frontend designer		
+Marcus Goh			    Backend developer
+Teo Bo Wei			    Backend developer
+Vivien Lee Xin Yi		    Scrum Master & Frontend designer

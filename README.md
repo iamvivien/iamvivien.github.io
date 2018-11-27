@@ -35,14 +35,14 @@ The environment will be updated accordingly after all changes made by the SCTF m
 
 
 ## **VIDEO**
-A YouTube link has being provided on how to use "CycleMyLyfe" which they can access via [here](https://youtu.be/nftdN8sL8v8).
+A YouTube video to showcase the key uses of our VR app can be accessed [here](https://youtu.be/nftdN8sL8v8).
 
 
 ## **FEEDBACK**
-We would love to hear your thoughts or feedback on how we can improve your experience! Please fill up this [form](https://goo.gl/forms/bFnaAKiA1IAR7uls2)!
+We would love to hear your thoughts or feedback on how we can improve your experience! Please fill up this [form](https://goo.gl/forms/bFnaAKiA1IAR7uls2).
 
 
 ## **FAQ**
 Q1: How can users access the application?
 
-A: You can access the live application via https://iamvivien.github.io
+A: You can access the live application via https://cyclemylyfe.github.io/
