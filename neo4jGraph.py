@@ -97,8 +97,7 @@ def add_sqli_relationship(tx):
 
 # create the relationship between attack nodes from same attacker
 def add_sqli_multiple(tx, ip):
-	tx.run("MATCH (n {ip: $ip}) CREATE (sqli:SQLi {ip: $ip, attackType: 'SQLi'})-[r:SQLi]->(n)",
-			ip=ip)
+	tx.run("MATCH (n {ip: $ip}) CREATE (sqli:SQLi {ip: $ip, attackType: 'SQLi'})-[r:SQLi]->(n)", ip=ip)
 
 
 
